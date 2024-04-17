@@ -18,6 +18,7 @@ gameIsRunning = True
 
 # Game loop
 while gameIsRunning:
+    pygame.draw.circle(screen, (255, 255, 255), (100, 100), 20)
     # Event handling
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
