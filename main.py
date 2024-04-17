@@ -18,15 +18,15 @@ gameIsRunning = True
 
 # Game loop
 while gameIsRunning:
-    pygame.draw.circle(screen, (255, 255, 255), (100, 100), 20)
+    
     # Event handling
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             gameIsRunning = False
 
-		# Clear the screen
-    screen.fill((0, 0, 0))
 
+    screen.fill((0, 0, 0))
+    pygame.draw.circle(screen, (255, 255, 255), (100, 100), 20)
     # Flip the display
     pygame.display.flip()
 
