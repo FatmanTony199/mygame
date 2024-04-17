@@ -1,27 +1,6 @@
 import pygame
 import sys
 
-
-def __init__(self, x: int | float, y: int | float, color: list[int] | tuple[int], r: int = 5, direction: int | float = -1):
-        self.x = x
-        self.y = y
-        self.color = color
-        self.r = r
-        if direction == -1:
-            self.d = ri(0, 360)
-        else:
-            self.d = direction
-
-
-def move(self, speed):
-        self.x += sin(self.d / 180 * pi) * speed
-        self.y += cos(self.d / 180 * pi) * speed
-        if self.x > W - self.r or self.x < 0 + self.r:
-            self.d = 360 - self.d
-        if self.y > H - self.r or self.y < 0 + self.r:
-            self.d = 540 - self.d
-            if self.d >= 360:
-                self.d -= 360
 # Initialize Pygame
 pygame.init()
 
@@ -37,18 +16,29 @@ clock = pygame.time.Clock()
 
 gameIsRunning = True
 
+x = 100
+y = 100
+speedx = 5
+speedy = 5
 # Game loop
 while gameIsRunning:
-    
     # Event handling
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             gameIsRunning = False
-        if event.type == 
 
-
+		# Clear the screen
     screen.fill((0, 0, 0))
-    pygame.draw.circle(screen, (255, 255, 255), (100, 100), 20)
+    
+    x += speedx
+    y += speedy
+    pygame.draw.circle(screen, (255, 255, 255), (x , y ), 20)
+
+    # if x+20 >= 800 or x-20 <= 0:
+    #     speedx = -speedx
+    # elif y+20 >= 600 or y-20 <= 0:
+    #     speedy = -speedy
+
     # Flip the display
     pygame.display.flip()
 
