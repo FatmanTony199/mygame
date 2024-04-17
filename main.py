@@ -20,6 +20,16 @@ x = 100
 y = 100
 speedx = 5
 speedy = 5
+
+def run():
+    x += speedx
+    y += speedy
+
+    if x+20 >= 800 or x-20 <= 0:
+        speedx = -speedx
+    elif y+20 >= 600 or y-20 <= 0:
+        speedy = -speedy
+
 # Game loop
 while gameIsRunning:
     # Event handling
@@ -28,17 +38,10 @@ while gameIsRunning:
             gameIsRunning = False
 
 		# Clear the screen
-    screen.fill((0, 0, 0))
-    
-    x += speedx
-    y += speedy
+    screen.fill((0, 0, 0))   
     pygame.draw.circle(screen, (255, 255, 255), (x , y ), 20)
-
-    # if x+20 >= 800 or x-20 <= 0:
-    #     speedx = -speedx
-    # elif y+20 >= 600 or y-20 <= 0:
-    #     speedy = -speedy
-
+    
+    run()
     # Flip the display
     pygame.display.flip()
 
